@@ -1,0 +1,64 @@
+body {
+    background-color :lightblue; 
+    display :flex; 
+    flex-direction :column; 
+    height :100vh; 
+    justify-content :center; 
+    margin :0; 
+}
+
+h1, p {
+    text-align :center; 
+}
+
+#image-container {
+    display :flex; 
+    justify-content :center; 
+}
+
+#image-container img {
+    border-radius :10px; 
+    box-shadow :0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    max-width :100%; 
+}
+
+#guess-form {
+    align-items :center; 
+    display :flex; 
+    flex-direction :column; 
+}
+
+#guess-form label {
+    font-size :18px; 
+}
+
+/* box */
+
+#guess-form input[type="text"] {
+    border :none; 
+    border-bottom :2px solid #333; 
+    font-size :18px; 
+    margin-bottom :10px; 
+    outline :none; 
+    padding :10px; 
+}
+
+#guess-form input[type="submit"], #guess-form button[type="button"] {
+    background-color :#333; 
+    border :none; 
+    border-radius :20px; 
+    color:white; 
+        cursor:pointer; 
+        font-size :18px; 
+        margin-top :10px; 
+        padding :12px 25px; 
+        transition :all 0.3s ease-in-out; 
+}
+
+#guess-form input[type="submit"]:hover, #guess-form button[type="button"]:hover {
+    background-color:#555; 
+}
+
+#result {
+    font-size :18px; 
+}
