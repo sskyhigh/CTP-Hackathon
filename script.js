@@ -1,5 +1,6 @@
 // urls to images
 const IMAGE_URLS = [
+  // consider adding to Github directory with uniform dimensions
   "https://tractive.com/blog/wp-content/uploads/2021/11/section_image_cat_hunting_02-768x576.jpg", // cat
   "https://img.freepik.com/premium-vector/cat-hand-drawing-style_54889-764.jpg", // dog
   "https://clipartix.com/wp-content/uploads/2016/05/Moving-bunny-clip-art-cartoon-bunny-rabbits-clip-art-images-2.jpg", // rabbit
@@ -22,18 +23,48 @@ const PARTIAL_ANSWERS = [
   ["pigeon", "eagle"],
   ["turtle"],
 ];
+
+// Magic number array
+let questions = [0, 1, 2, 3, 4];
+
 // Set the initial points to 0
 let points = 0;
+const playerScore = document.getElementById("player-score");
+playerScore.textContent = points.toString();
 // Random pictures
-let imageIndex = Math.floor(Math.random() * IMAGE_URLS.length);
+let questionIndex = Math.floor(Math.random() * questions.length);
 // Set the initial guess state to false
 let guessed = false;
 // Set the initial number of attempts to 0
 let attempts = 0;
 
+// algorithm to calculate points earned
+function calculatePoints(input, answer){
+  let numCorrect = 0;
+  let numIncorrect = 0;
+  let characterIndex = 0;
+  let pointsAccumulated = 0;
+  // handles parts of strings that line-up w/ each other; can be correct or incorrect
+  while (characterIndex < input.length && charcterIndex < answer.length){
+      if (input[characterIndex] === answer[characterIndexndex]){
+          numCorrect += 1;
+      }
+      else {
+          numIncorrect += 1
+      }
+      index++; 
+  }
+  // handles parts of strings that don't line-up w/ each other; all incorrect
+  while (characterIndex < input.length || characterIndex < answer.length){
+    numIncorrect += 1;
+  }
+  pointsAccumulated = 2*numCorrect - numIncorrect;
+  return pointsAccumulated;
+}
+
 // display images on screen
 function showImage() {
-  const imageUrl = IMAGE_URLS[imageIndex];
+  const imageUrl = IMAGE_URLS[questions[questionIndex]];
   const imageContainer = document.getElementById("image-container");
   const img = document.createElement("img");
   img.src = imageUrl;
@@ -49,7 +80,7 @@ function checkGuess(event) {
     const guess = document.getElementById("guess").value.toLowerCase();
     const result = document.getElementById("result");
     // if user gets the right answer, then user gets 2 points
-    if (guess === CORRECT_ANSWERS[imageIndex].toLowerCase()) {
+    if (guess === CORRECT_ANSWERS[questions[questionIndex]].toLowerCase()) {
       if (attempts === 0) {
         result.textContent = "Correct! You win!";
         points += 2;
@@ -61,7 +92,7 @@ function checkGuess(event) {
       // if user guesses partial answer,
       // say `right answer was.. turtle in sea` and
       // user only inputs `turtle` user only gets 1 point
-    } else if (PARTIAL_ANSWERS[imageIndex].includes(guess)) {
+    } else if (PARTIAL_ANSWERS[questions[questionIndex]].includes(guess)) {
       result.textContent = "Close! You get partial credit.";
       points += 0.5;
       attempts += 1;
@@ -70,8 +101,9 @@ function checkGuess(event) {
       result.textContent = "Sorry, that is incorrect.";
       attempts += 1;
     }
-    // displays text on screen
-    result.textContent += ` You have ${points} point(s).`;
+    // updates player score
+    playerScore.textContent = points.toString();
+    
     // after 3 seconds, the text disappears
     setTimeout(() => {
       result.textContent = "";
@@ -85,9 +117,12 @@ function checkGuess(event) {
   }
 }
 
-// displays the image if user gets right
+// displays the next image if user gets the correct answer
 function nextImage() {
-  imageIndex = Math.floor(Math.random() * IMAGE_URLS.length);
+  // remove current question from available questions
+  questions.splice(questionIndex, 1);
+  // fetch new question
+  questionIndex = Math.floor(Math.random() * questions.length);
   showImage();
   guessed = false;
   attempts = 0;
@@ -95,7 +130,7 @@ function nextImage() {
 
 // if the person can't guess the image, reload to another image
 function reloadImage() {
-  imageIndex = Math.floor(Math.random() * IMAGE_URLS.length);
+  questionIndex = Math.floor(Math.random() * questions.length);
   showImage();
 }
 

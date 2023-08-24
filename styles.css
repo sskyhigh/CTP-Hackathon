@@ -22,6 +22,11 @@ h1, p {
     max-width :100%; 
 }
 
+.score-board {
+    display: grid;
+    width: 100px;
+}
+
 #guess-form {
     align-items :center; 
     display :flex; 
