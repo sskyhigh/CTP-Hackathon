@@ -24,7 +24,7 @@ h1, p {
 
 .score-board {
     display: grid;
-    width: 50px;
+    width: 100px;
 }
 
 #guess-form {
