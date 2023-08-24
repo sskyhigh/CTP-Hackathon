@@ -1,5 +1,6 @@
 // urls to images
 const IMAGE_URLS = [
+  // consider adding to Github directory wit uniform dimensions
   "https://tractive.com/blog/wp-content/uploads/2021/11/section_image_cat_hunting_02-768x576.jpg", // cat
   "https://img.freepik.com/premium-vector/cat-hand-drawing-style_54889-764.jpg", // dog
   "https://clipartix.com/wp-content/uploads/2016/05/Moving-bunny-clip-art-cartoon-bunny-rabbits-clip-art-images-2.jpg", // rabbit
@@ -24,6 +25,8 @@ const PARTIAL_ANSWERS = [
 ];
 // Set the initial points to 0
 let points = 0;
+const playerScore = document.getElementById("player-score");
+playerScore.textContent = points.toString();
 // Random pictures
 let imageIndex = Math.floor(Math.random() * IMAGE_URLS.length);
 // Set the initial guess state to false
@@ -57,6 +60,7 @@ function checkGuess(event) {
         result.textContent = "Correct!";
         points += 1;
       }
+      playerScore.textContent = points.toString();
       guessed = true;
       // if user guesses partial answer,
       // say `right answer was.. turtle in sea` and
