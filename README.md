@@ -1,29 +1,10 @@
-# CUNY Tech Prep Hackathon: Piccasolution
 
-## Submitted by:
-- Dahyeon Park
-- Kamilah Torres
-- Luiz Felipe Lemos
-- Shao Yan
+  # originals 
 
+  Note: Please ensure you have installed <code><a href="https://nodejs.org/en/download/">nodejs</a></code>
 
-## Summary
-
-Piccasolution is a challenging and interactive guessing game. Users are provided with random images and their task is to accurately guess the corresponding keywords that match these images.
-
-## Milestone Requirements
-
-The following REQUIRED features are completed:
-
-- [x] The game must conclude with a GIF that marks the end of the user's gameplay session.
-- [x] If a user attempts to guess the keyword again, the entire word must be rewritten. 
-
-The following OPTIONAL features are included:
-
-- [x] Introduce a points system that rewards users based on the accuracy of their guesses.
-- [x] Display a history of previously attempted keywords to enhance user experience. 
-
-
-## Notes
-
-Here's a place for any other notes on this milestone!
+  To preview and run the project on your device:
+  1) Open project folder in <a href="https://code.visualstudio.com/download">Visual Studio Code</a>
+  2) In the terminal, run `npm install`
+  3) Run `npm start` to view project in browser
+  
