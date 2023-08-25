@@ -1,6 +1,6 @@
 # CUNY Tech Prep Hackathon: Piccasolution
 
-## Submitted by:
+## Submitted by: 
 - Dahyeon Park
 - Kamilah Torres
 - Luiz Felipe Lemos
