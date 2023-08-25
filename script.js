@@ -44,7 +44,7 @@ function calculatePoints(input, answer){
   let characterIndex = 0;
   let pointsAccumulated = 0;
   // handles parts of strings that line-up w/ each other; can be correct or incorrect
-  while (characterIndex < input.length && charcterIndex < answer.length){
+  while (characterIndex < input.length && characterIndex < answer.length){
       if (input[characterIndex] === answer[characterIndex]){
           numCorrect += 1;
       }
