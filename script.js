@@ -109,6 +109,7 @@ function checkGuess(event) {
       result.textContent = "";
     }, 3000);
     // if user guesses the right answer, then the screen will auto reload
+    // timer is set to 3 seconds. 
     if (guessed) {
       setTimeout(() => {
         nextImage();
