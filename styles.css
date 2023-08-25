@@ -32,13 +32,16 @@ h1, h3 {
     display: flex;
     justify-content: center;
 }
-
+ 
 #image-container img {
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 100%;
     width: 500px;
     height: 500px;
+    border: 30px solid transparent;
+    padding: 15px;
+    border-image: url(Images/boarder-1@2x.png) 40 round;
 }
 
 .score-board {
