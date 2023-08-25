@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-readex-pro: "Readex Pro";
+
+  /* font sizes */
+  --font-size-xl: 20px;
+  --font-size-5xl: 24px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray-100: rgba(0, 0, 0, 0.55);
+
+  /* border radiuses */
+  --br-sm: 14px;
+  --br-xs: 12px;
+}
