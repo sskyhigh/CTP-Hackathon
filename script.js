@@ -6,14 +6,16 @@ const IMAGE_URLS = [
   "https://img.freepik.com/premium-vector/cat-hand-drawing-style_54889-764.jpg", // cat
   "https://clipartix.com/wp-content/uploads/2016/05/Moving-bunny-clip-art-cartoon-bunny-rabbits-clip-art-images-2.jpg", // rabbit
   "https://media.istockphoto.com/id/1254985253/vector/cartoon-water-turtle-on-a-blue-background.jpg?s=612x612&w=0&k=20&c=uQJSUWEiVRiLRq6mwIRiMPqob1_SanVvSnM5QzXZpmM=", // small turtle
-  "https://cdn.discordapp.com/attachments/1142599118401843210/1144417787578691634/7993623-WCRKWPCM-7.jpg"
+  "https://cdn.discordapp.com/attachments/1142599118401843210/1144417787578691634/7993623-WCRKWPCM-7.jpg",
+  "https://drive.google.com/file/d/1zTuUPub3Hv792uTC5htx2T86HsGCCYE7/view?usp=sharing", // mouse
 ];
 // array that holds correct answers, each right answer +=2 points
 const CORRECT_ANSWERS = [
   "A cat",
   "A rabbit",
   "Small Turtle",
-  "funny giraffe"
+  "funny giraffe",
+  "mouse"
 ];
 // Partial credit answers
 const PARTIAL_ANSWERS = [
@@ -21,6 +23,7 @@ const PARTIAL_ANSWERS = [
   ["rabbit", "hare"],
   ["turtle"],
   ["funny pony", "spotty"]
+  ["banana mouse"]
 ];
 
 // Magic number array
