@@ -1,31 +1,30 @@
 // urls to images
+const ENDING_GIF_URL = "https://cdn.discordapp.com/attachments/1142599118401843210/1144438090862170142/f8891ef65e086abc67e5b448acb8bc12.gif"
+
 const IMAGE_URLS = [
   // consider adding to Github directory with uniform dimensions
-  "https://tractive.com/blog/wp-content/uploads/2021/11/section_image_cat_hunting_02-768x576.jpg", // cat
-  "https://img.freepik.com/premium-vector/cat-hand-drawing-style_54889-764.jpg", // dog
+  "https://img.freepik.com/premium-vector/cat-hand-drawing-style_54889-764.jpg", // cat
   "https://clipartix.com/wp-content/uploads/2016/05/Moving-bunny-clip-art-cartoon-bunny-rabbits-clip-art-images-2.jpg", // rabbit
-  "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/510af88a-7baf-4004-9694-a89166f0baa4/d1nzz36-041294b4-b038-4421-b682-7cdf84fc6ef2.jpg/v1/fill/w_600,h_686,q_75,strp/bird_drawing_by_conbatiente_d1nzz36-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9Njg2IiwicGF0aCI6IlwvZlwvNTEwYWY4OGEtN2JhZi00MDA0LTk2OTQtYTg5MTY2ZjBiYWE0XC9kMW56ejM2LTA0MTI5NGI0LWIwMzgtNDQyMS1iNjgyLTdjZGY4NGZjNmVmMi5qcGciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.WECAY6ZlDmuwtOF75BBigWb2B4jeHF4PM-ajEGAVi2o", // bird
   "https://media.istockphoto.com/id/1254985253/vector/cartoon-water-turtle-on-a-blue-background.jpg?s=612x612&w=0&k=20&c=uQJSUWEiVRiLRq6mwIRiMPqob1_SanVvSnM5QzXZpmM=", // small turtle
+  "https://cdn.discordapp.com/attachments/1142599118401843210/1144417787578691634/7993623-WCRKWPCM-7.jpg"
 ];
 // array that holds correct answers, each right answer +=2 points
 const CORRECT_ANSWERS = [
   "A cat",
-  "A dog",
   "A rabbit",
-  "A bird",
   "Small Turtle",
+  "funny giraffe"
 ];
 // Partial credit answers
 const PARTIAL_ANSWERS = [
   ["cat", "kitten"],
-  ["dog", "puppy"],
   ["rabbit", "hare"],
-  ["pigeon", "eagle"],
   ["turtle"],
+  ["funny pony", "spotty"]
 ];
 
 // Magic number array
-let questions = [0, 1, 2, 3, 4];
+let questions = [0, 1, 2, 3];
 
 // Set the initial points to 0
 let points = 0;
@@ -46,7 +45,7 @@ function calculatePoints(input, answer){
   let pointsAccumulated = 0;
   // handles parts of strings that line-up w/ each other; can be correct or incorrect
   while (characterIndex < input.length && charcterIndex < answer.length){
-      if (input[characterIndex] === answer[characterIndexndex]){
+      if (input[characterIndex] === answer[characterIndex]){
           numCorrect += 1;
       }
       else {
@@ -102,6 +101,7 @@ function checkGuess(event) {
       attempts += 1;
     }
     // updates player score
+    guess.value = "";
     playerScore.textContent = points.toString();
     
     // after 3 seconds, the text disappears
@@ -121,17 +121,36 @@ function checkGuess(event) {
 function nextImage() {
   // remove current question from available questions
   questions.splice(questionIndex, 1);
-  // fetch new question
-  questionIndex = Math.floor(Math.random() * questions.length);
-  showImage();
-  guessed = false;
-  attempts = 0;
+  if (questions.length === 0){
+    endGame();
+  }
+  else {
+    // fetch new question
+    questionIndex = Math.floor(Math.random() * questions.length);
+    showImage();
+    guessed = false;
+    attempts = 0;
+  }
 }
 
 // if the person can't guess the image, reload to another image
 function reloadImage() {
   questionIndex = Math.floor(Math.random() * questions.length);
   showImage();
+}
+
+function endGame() {
+  document.getElementById("guess-form").hidden = true;
+  document.getElementById("next-button").hidden = true;
+  document.getElementById("reload-button").hidden = true;
+  document.getElementById("result").textContent = "Game Over!";
+  const imageContainer = document.getElementById("image-container");
+  const img = document.createElement("img");
+  img.src = ENDING_GIF_URL;
+  img.alt = "Game Over";
+  imageContainer.innerHTML = "";
+  imageContainer.appendChild(img);
+  return;
 }
 
 window.addEventListener("load", showImage);
