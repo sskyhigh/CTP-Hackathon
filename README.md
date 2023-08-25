@@ -1,10 +1,10 @@
 # CUNY Tech Prep Hackathon: Piccasolution
 
 ## Submitted by:
-- Dahyeon Park
-- Kamilah Torres
-- Luiz Felipe Lemos
-- Shao Yan
+- Dahyeon Park Frontend
+- Kamilah Torres Frontend
+- Luiz Felipe Lemos Backend
+- Shao Yan Backend
 
 
 ## Summary
