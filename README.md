@@ -15,13 +15,13 @@ Piccasolution is a challenging and interactive guessing game. Users are provided
 
 The following REQUIRED features are completed:
 
-- The game must conclude with a GIF that marks the end of the user's gameplay session.
-- If a user attempts to guess the keyword again, the entire word must be rewritten. 
+- [x] The game must conclude with a GIF that marks the end of the user's gameplay session.
+- [x] If a user attempts to guess the keyword again, the entire word must be rewritten. 
 
 The following OPTIONAL features are included:
 
-- Introduce a points system that rewards users based on the accuracy of their guesses.
-- Display a history of previously attempted keywords to enhance user experience. 
+- [x] Introduce a points system that rewards users based on the accuracy of their guesses.
+- [x] Display a history of previously attempted keywords to enhance user experience. 
 
 
 ## Notes
