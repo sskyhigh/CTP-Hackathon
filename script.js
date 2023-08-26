@@ -156,7 +156,7 @@ function checkGuess(event) {
   }
 }
 
-// Add code to display three hearts initially when the page loads
+// Add code to display three hearts initially when the page 
 const heartBar = document.querySelector(".heart-bar");
 for (let i = 0; i < heartsRemaining; ++i) {
   const img = document.createElement("img");
@@ -164,7 +164,7 @@ for (let i = 0; i < heartsRemaining; ++i) {
   heartBar.appendChild(img);
 }
 
-// displays the next image if user gets the correct answer
+// displays the next image if user gets correct answer
 function nextImage() {
   // remove current question from available questions
   questions.splice(questionIndex, 1);
