@@ -1,137 +1,142 @@
-*{
-    font-family: 'Readex Pro', sans-serif;
+* {
+  font-family: "Readex Pro", sans-serif;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    margin: 0;
-    font-family: 'Readex Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  font-family: "Readex Pro", sans-serif;
 }
 
-#pica{
-    color: orangered
+#pica {
+  color: orangered;
 }
 
-body::before{
-    content: "";
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: url(Images/bgimage.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.1;
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url(Images/bgimage.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.1;
 }
 
 #logo-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #logo-container img {
-    width: 100px;
+  width: 100px;
 }
 
-h1, h3 {
-    text-align: center;
+h1,
+h3 {
+  text-align: center;
 }
 
 #image-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
- 
+
 #image-container img {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 100%;
-    width: 500px;
-    height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  width: 500px;
+  height: 500px;
 }
 
 .score-board {
-   position:absolute; 
-   top :10px; 
-   right :10px; 
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .heart-bar {
-   position:absolute; 
-   top :10px; 
-   left :10px; 
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .heart-bar img {
-   width :30px; 
-   height :30px; 
-   margin-right :5px; 
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
 }
 
 #guess-form {
-   align-items:center; 
-   display:flex; 
-   flex-direction :column; 
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 #guess-form label {
-   font-size :18px; 
+  font-size: 18px;
 }
 
 /* box */
 
-#guess-form input[type ="text"] {
-   border:none; 
-   border-bottom :2px solid #333; 
-   font-size :18px; 
+#guess-form input[type="text"] {
+  border: none;
+  border-bottom: 2px solid #333;
+  font-size: 18px;
 }
 
-#guess-form input[type ="submit"], #guess-form button[type ="button"] {
-   background-color:#333; 
-   border:none; 
-   border-radius :20px; 
-   color:white; 
-   cursor:pointer; 
-   font-size :18px; 
-   margin-top :10px; 
-   padding :12px 25px; 
-   transition :all 0.3s ease-in-out; 
+#guess-form input[type="submit"],
+#guess-form button[type="button"] {
+  background-color: #dfaa49; /* Orange (picked) */
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+  padding: 12px 25px;
+  transition: all 0.3s ease-in-out;
 }
 
-#guess-form input[type ="submit"]:hover, #guess-form button[type ="button"]:hover {
-   background-color:#555; 
+#guess-form input[type="submit"]:hover,
+#guess-form button[type="button"]:hover {
+  background-color: #add8e6; /* Light blue hover */
+  transform: scale(1.1); /* Playful animation */
 }
 
 #store-button {
-   background-color :blue; 
+  background-color: blue;
 }
 
 #exit-button {
-   background-color:red; 
+  background-color: red;
 }
 
 /* Add these lines to move the buttons to the bottom left */
 
-#store-button, #exit-button {
-   position:absolute; 
-   bottom :10px; 
+#store-button,
+#exit-button {
+  position: absolute;
+  bottom: 10px;
 }
 
 #store-button {
-   left :10px; 
+  left: 10px;
 }
 
 #exit-button {
-   left :150px; 
+  left: 150px;
 }
 
 /* End of added lines */
 
 #result {
-   font-size :18px; 
+  font-size: 18px;
 }
