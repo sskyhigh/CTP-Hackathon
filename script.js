@@ -150,7 +150,7 @@ function checkGuess(event) {
       heartBar.innerHTML="";
       for (let i=0; i<heartsRemaining; i++) {
           const img=document.createElement("img");
-          img.src="Images/heart.png"; // Replace with the path to your heart image
+          img.src="Images/heart.png"; 
           heartBar.appendChild(img);
       }
   }
